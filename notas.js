@@ -19,7 +19,8 @@ const evaluaciones = [
         Esta en el grupo de WhataApp :D
 `,
         notas: {
-            5: ["Daniel Zaldívar Figueredo","Victor Manuel Maceira Mir",""]
+            5: ["Daniel Zaldívar Figueredo","Victor Manuel Maceira Mir",""],
+            4: ["Daniel Alejandro Beliz Torres","",""]
         }
     },
     {
