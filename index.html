@@ -2,11 +2,11 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>La web 2CD</title>
+<title>LA Web de 2do año Curso Diurno</title>
 
 <style>
 /* =======================
-   ESTILOS GENERALES
+   RESET
 ======================= */
 * {
     box-sizing: border-box;
@@ -14,11 +14,15 @@
     padding: 0;
 }
 
+/* =======================
+   BODY
+======================= */
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background-color: #f2f4f8;
     color: #333;
-    line-height: 1.6;
+    line-height: 1.5;
+    font-size: 12px; 
 }
 
 /* =======================
@@ -27,16 +31,16 @@ body {
 header {
     background: linear-gradient(135deg, #1e1e2f, #34345a);
     color: white;
-    padding: 40px 20px;
+    padding: 50px 10px;
     text-align: center;
 }
 
 header h1 {
-    font-size: 2.5em;
+    font-size: 4em;
 }
 
 header p {
-    opacity: 0.9;
+    font-size: 3em;
 }
 
 /* =======================
@@ -48,52 +52,45 @@ nav {
     background-color: #1e1e2f;
     display: flex;
     justify-content: center;
-    gap: 30px;
-    padding: 15px;
+    gap: 25px;
+    padding: 20px 5px;
     z-index: 1000;
+    flex-wrap: wrap;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-weight: 600;
-    position: relative;
-}
-
-nav a::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background: #4fc3f7;
-    bottom: -5px;
-    left: 0;
-    transition: 0.3s;
-}
-
-nav a:hover::after {
-    width: 100%;
+    font-size: 2.5em;
 }
 
 /* =======================
    SECCIONES
 ======================= */
 section {
-    padding: 50px 15%;
+    padding: 50px 5%;
 }
 
 section h2 {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     color: #1e1e2f;
+    font-size: 3em;
 }
 
+/* =======================
+   CARD
+======================= */
 .card {
     background: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    margin-bottom: 20px;
-    animation: fadeIn 0.6s ease;
+    padding: 40px 25px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    margin-bottom: 25px;
+}
+
+.card p {
+    font-size: 2em;
 }
 
 /* =======================
@@ -105,18 +102,20 @@ section h2 {
     align-items: center;
     text-decoration: none;
     color: inherit;
-    transition: background 0.3s, transform 0.2s;
+    flex-wrap: wrap;
 }
 
-.unidad:hover {
-    background-color: #f0f6ff;
-    transform: translateX(5px);
+.unidad h3 {
+    font-size: 2.5em;
+}
+
+.unidad p {
+    font-size: 2em;
 }
 
 .flecha {
-    font-size: 1.8em;
+    font-size: 3em;
     color: #4fc3f7;
-    font-weight: bold;
 }
 
 /* =======================
@@ -130,24 +129,13 @@ table {
 th {
     background-color: #1e1e2f;
     color: white;
-    cursor: pointer;
 }
 
 th, td {
     padding: 12px;
     text-align: center;
     border-bottom: 1px solid #ddd;
-}
-
-tr:hover {
-    background-color: #f1f1f1;
-}
-
-.arrow {
-    cursor: pointer;
-    font-size: 20px;
-    color: #4fc3f7;
-    font-weight: bold;
+    font-size: 1.8em;
 }
 
 /* =======================
@@ -155,11 +143,11 @@ tr:hover {
 ======================= */
 .buscador {
     margin-bottom: 15px;
-    padding: 10px;
+    padding: 14px;
     width: 100%;
-    max-width: 320px;
-    border-radius: 6px;
+    border-radius: 8px;
     border: 1px solid #ccc;
+    font-size: 1.8em;
 }
 
 /* =======================
@@ -175,27 +163,32 @@ tr:hover {
 
 .modal-content {
     background: white;
-    width: 85%;
-    margin: 5% auto;
-    padding: 25px;
-    border-radius: 10px;
+    width: 95%;
+    max-width: 900px;
+    margin: 3% auto;
+    padding: 30px;
+    border-radius: 16px;
+    max-height: 94vh;
+    overflow-y: auto;
 }
 
 .close {
     float: right;
-    font-size: 22px;
+    font-size: 34px;
     cursor: pointer;
 }
 
 /* =======================
-   DETALLE
+   DESCRIPCIÓN EVALUACIÓN
 ======================= */
-.detalle {
-    display: none;
-    background: #f9fafc;
-    padding: 15px;
-    text-align: left;
-    font-size: 14px;
+#descripcionBox {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    font-size: 2em;
+    max-height: 300px;
+    overflow-y: auto;
 }
 
 /* =======================
@@ -205,33 +198,153 @@ footer {
     background-color: #1e1e2f;
     color: white;
     text-align: center;
-    padding: 15px;
-    margin-top: 40px;
+    padding: 20px;
+    font-size: 2em;
 }
 
 /* =======================
-   ANIMACIONES
+   RESPONSIVE MÓVIL (DOBLE TAMAÑO)
 ======================= */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+@media (max-width: 600px) {
 
-/* =======================
-   RESPONSIVE
-======================= */
-@media (max-width: 900px) {
+    body {
+        font-size: 20px; /* MÓVIL */
+    }
+
     section {
-        padding: 40px 8%;
+        padding: 30px 2%;
+    }
+
+    header h1 {
+        font-size: 6em;
+    }
+
+    header p {
+        font-size: 4em;
+    }
+
+    nav a {
+        font-size: 4em;
+    }
+
+    section h2 {
+        font-size: 4.5em;
+    }
+
+    .card {
+        padding: 30px 20px;
+    }
+
+    .card p {
+        font-size: 3.5em;
+    }
+
+    .unidad h3 {
+        font-size: 3.8em;
+    }
+
+    .unidad p {
+        font-size: 3.2em;
+    }
+
+    .flecha {
+        font-size: 4em;
+    }
+
+    .buscador {
+        font-size: 3.5em;
+        padding: 20px;
+    }
+
+    /* TABLA A FORMATO VERTICAL */
+    table, thead, tbody, tr, td {
+        display: block;
+        width: 100%;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        background: #f2f4f8;
+        margin-bottom: 20px;
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        font-size: 3.2em;
+        padding: 10px 0;
+    }
+
+    td:nth-child(1)::before { content: "Evaluación"; font-weight: bold; }
+    td:nth-child(2)::before { content: "Fecha"; font-weight: bold; }
+    td:nth-child(3)::before { content: "Nota"; font-weight: bold; }
+    td:nth-child(4)::before { content: "Promedio"; font-weight: bold; }
+
+    #descripcionBox {
+        font-size: 3.2em;
+        padding: 25px;
+        max-height: 40vh;
     }
 }
+
+.buscador-con-boton {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.buscador-con-boton .buscador {
+    flex: 1;
+}
+
+.btn-evaluaciones {
+    padding: 15px 20px;
+    font-size: 1.9em;
+    border-radius: 10px;
+    border: none;
+    background-color: #1e1e2f;
+    color: white;
+    cursor: pointer;
+    white-space: nowrap;
+margin-top: -14px;
+
+
+    display: flex;                 
+    align-items: center;         
+    justify-content: center;
+    gap: 6px;                     
+
+    line-height: 1;              
+}
+
+
+.btn-evaluaciones::after {
+    content: " ➜";
+    font-size: 1.2em;
+    margin-left: 6px;
+    color: white;
+    transition: transform 0.2s ease;
+}
+
+.btn-evaluaciones:hover::after {
+    transform: translateX(4px);
+}
+
+
+
+
 </style>
 </head>
 
 <body>
 
 <header>
-    <h1>Curso 2do año de Lic.Informática</h1>
+    <h1>Fundamentos de Programación</h1>
     <p>Profesor Jorge D. | Educación Superior</p>
 </header>
 
@@ -239,6 +352,7 @@ footer {
     <a href="#inicio">Inicio</a>
     <a href="#contenidos">Contenidos</a>
     <a href="#notas">Notas</a>
+    <a href="evaluaciones.html">Evaluaciones </a>
 </nav>
 
 <section id="inicio">
@@ -246,11 +360,11 @@ footer {
     <div class="card">
         <p>
             Esta plataforma ha sido creada para acompañar el proceso de aprendizaje
-            de la asignatura <strong>Programación Web </strong> .
+            de la asignatura <strong>Fundamentos de Programación</strong>.
         </p>
         <p>
             Aquí encontrarás resúmenes teóricos, ejemplos claros y el seguimiento
-            de las calificaciones del curso.
+            de las calificaciones del curso, o lo que queda de el...
         </p>
     </div>
 </section>
@@ -261,7 +375,7 @@ footer {
     <a href="unidad1.html" class="card unidad">
         <div>
             <h3>Unidad 1 – Introducción</h3>
-            <p>Algoritmos, lógica, pseudocódigo y diagramas de flujo.</p>
+            <p>Introducción a la Programación Web, Html, css, js.</p>
         </div>
         <div class="flecha">→</div>
     </a>
@@ -276,70 +390,68 @@ footer {
 
     <a href="unidad3.html" class="card unidad">
         <div>
-            <h3>Unidad 3 – Condicionales</h3>
-            <p>Ni Vamos a llegar....</p>
+            <h3>Unidad 3 – Animacion</h3>
+            <p>Ni vamos a llegar</p>
         </div>
         <div class="flecha">→</div>
     </a>
 </section>
 
 <section id="notas">
-<h2>Calificaciones</h2>
+    <h2>Calificaciones</h2>
 
-<div class="card">
+    <div class="card">
+        <div class="buscador-con-boton">
+            <input type="text" id="buscadorNombre" class="buscador" placeholder="Buscar alumno por nombre...">
+            <button class="btn-evaluaciones" onclick="abrirEvaluaciones()">Evaluaciones</button>
+        </div>
+        
 
-<input type="text" id="buscadorNombre" class="buscador" placeholder="Buscar alumno por nombre...">
-
-<table id="tablaAlumnos">
-<thead>
-<tr>
-<th onclick="ordenar('numero')">Nº</th>
-<th onclick="ordenar('nombre')">Nombre</th>
-<th onclick="ordenar('promedio')">Promedio</th>
-<th></th>
-</tr>
-</thead>
-<tbody></tbody>
-</table>
-
-</div>
+        <table id="tablaAlumnos">
+            <thead>
+                <tr>
+                    <th onclick="ordenarTabla('numero')" style="cursor:pointer">Nº</th>
+                    <th onclick="ordenarTabla('nombre')" style="cursor:pointer">Nombre</th>
+                    <th onclick="ordenarTabla('promedio')" style="cursor:pointer">Promedio</th>
+                    <th></th>
+                </tr>
+            </thead>
+            
+            <tbody></tbody>
+        </table>
+    </div>
 </section>
 
 <div class="modal" id="modal">
-<div class="modal-content">
-<span class="close" onclick="cerrarModal()">✖</span>
-<h3 id="tituloAlumno"></h3>
+    <div class="modal-content">
+        <span class="close" onclick="cerrarModal()">✖</span>
+        <h3 id="tituloAlumno"></h3>
 
-<table>
-<thead>
-<tr>
-<th>Evaluación</th>
-<th>Fecha</th>
-<th>Nota</th>
-<th>Promedio</th>
-</tr>
-</thead>
-<tbody id="detalleNotas"></tbody>
-</table>
-</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Evaluación</th>
+                    <th>Fecha</th>
+                    <th>Nota</th>
+                    <th>Promedio</th>
+                </tr>
+            </thead>
+            <tbody id="detalleNotas"></tbody>
+        </table>
+    </div>
 </div>
 
 <footer>
-    <p>© 2026 – Curso de Programación Web</p>
+    <p>© 2026 – Curso de Programación en C++</p>
 </footer>
 
-<!-- JS EXTERNO -->
 <script src="notas.js"></script>
-
-<!-- BUSCADOR SIMPLE (NO TOCA notas.js) -->
 <script>
+/* BUSCADOR (ARREGLADO, SIN TOCAR TU JS) */
 document.getElementById("buscadorNombre").addEventListener("input", function () {
     const filtro = this.value.toLowerCase();
-    const filas = document.querySelectorAll("#tablaAlumnos tbody tr");
-
-    filas.forEach(fila => {
-        const nombre = fila.children[1].innerText.toLowerCase();
-        fila.style.display = nombre.includes(filtro) ? "" : "none";
+    document.querySelectorAll("#tablaAlumnos tbody tr").forEach(fila => {
+        fila.style.display = fila.innerText.toLowerCase().includes(filtro) ? "" : "none";
     });
 });
 </script>
