@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>La web 2CD</title>
+
+<style>
+/* =======================
+   ESTILOS GENERALES
+======================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f2f4f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* =======================
+   HEADER
+======================= */
+header {
+    background: linear-gradient(135deg, #1e1e2f, #34345a);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+header p {
+    opacity: 0.9;
+}
+
+/* =======================
+   NAVBAR
+======================= */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: #1e1e2f;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #4fc3f7;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* =======================
+   SECCIONES
+======================= */
+section {
+    padding: 50px 15%;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    color: #1e1e2f;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    animation: fadeIn 0.6s ease;
+}
+
+/* =======================
+   UNIDADES
+======================= */
+.unidad {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.unidad:hover {
+    background-color: #f0f6ff;
+    transform: translateX(5px);
+}
+
+.flecha {
+    font-size: 1.8em;
+    color: #4fc3f7;
+    font-weight: bold;
+}
+
+/* =======================
+   TABLAS
+======================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #1e1e2f;
+    color: white;
+    cursor: pointer;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.arrow {
+    cursor: pointer;
+    font-size: 20px;
+    color: #4fc3f7;
+    font-weight: bold;
+}
+
+/* =======================
+   BUSCADOR
+======================= */
+.buscador {
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%;
+    max-width: 320px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* =======================
+   MODAL
+======================= */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 2000;
+}
+
+.modal-content {
+    background: white;
+    width: 85%;
+    margin: 5% auto;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.close {
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* =======================
+   DETALLE
+======================= */
+.detalle {
+    display: none;
+    background: #f9fafc;
+    padding: 15px;
+    text-align: left;
+    font-size: 14px;
+}
+
+/* =======================
+   FOOTER
+======================= */
+footer {
+    background-color: #1e1e2f;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+/* =======================
+   ANIMACIONES
+======================= */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 900px) {
+    section {
+        padding: 40px 8%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Curso 2do año de Lic.Informática</h1>
+    <p>Profesor Jorge D. | Educación Superior</p>
+</header>
+
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#contenidos">Contenidos</a>
+    <a href="#notas">Notas</a>
+</nav>
+
+<section id="inicio">
+    <h2>Bienvenidos</h2>
+    <div class="card">
+        <p>
+            Esta plataforma ha sido creada para acompañar el proceso de aprendizaje
+            de la asignatura <strong>Programación Web </strong> .
+        </p>
+        <p>
+            Aquí encontrarás resúmenes teóricos, ejemplos claros y el seguimiento
+            de las calificaciones del curso.
+        </p>
+    </div>
+</section>
+
+<section id="contenidos">
+    <h2>Contenidos del Curso</h2>
+
+    <a href="unidad1.html" class="card unidad">
+        <div>
+            <h3>Unidad 1 – Introducción</h3>
+            <p>Algoritmos, lógica, pseudocódigo y diagramas de flujo.</p>
+        </div>
+        <div class="flecha">→</div>
+    </a>
+
+    <a href="unidad2.html" class="card unidad">
+        <div>
+            <h3>Unidad 2 – Variables y Tipos de Datos</h3>
+            <p>int, float, double, char, string, entrada y salida de datos.</p>
+        </div>
+        <div class="flecha">→</div>
+    </a>
+
+    <a href="unidad3.html" class="card unidad">
+        <div>
+            <h3>Unidad 3 – Condicionales</h3>
+            <p>Ni Vamos a llegar....</p>
+        </div>
+        <div class="flecha">→</div>
+    </a>
+</section>
+
+<section id="notas">
+<h2>Calificaciones</h2>
+
+<div class="card">
+
+<input type="text" id="buscadorNombre" class="buscador" placeholder="Buscar alumno por nombre...">
+
+<table id="tablaAlumnos">
+<thead>
+<tr>
+<th onclick="ordenar('numero')">Nº</th>
+<th onclick="ordenar('nombre')">Nombre</th>
+<th onclick="ordenar('promedio')">Promedio</th>
+<th></th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+
+</div>
+</section>
+
+<div class="modal" id="modal">
+<div class="modal-content">
+<span class="close" onclick="cerrarModal()">✖</span>
+<h3 id="tituloAlumno"></h3>
+
+<table>
+<thead>
+<tr>
+<th>Evaluación</th>
+<th>Fecha</th>
+<th>Nota</th>
+<th>Promedio</th>
+</tr>
+</thead>
+<tbody id="detalleNotas"></tbody>
+</table>
+</div>
+</div>
+
+<footer>
+    <p>© 2026 – Curso de Programación Web</p>
+</footer>
+
+<!-- JS EXTERNO -->
+<script src="notas.js"></script>
+
+<!-- BUSCADOR SIMPLE (NO TOCA notas.js) -->
+<script>
+document.getElementById("buscadorNombre").addEventListener("input", function () {
+    const filtro = this.value.toLowerCase();
+    const filas = document.querySelectorAll("#tablaAlumnos tbody tr");
+
+    filas.forEach(fila => {
+        const nombre = fila.children[1].innerText.toLowerCase();
+        fila.style.display = nombre.includes(filtro) ? "" : "none";
+    });
+});
+</script>
+
+</body>
+</html>
