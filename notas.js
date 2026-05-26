@@ -22,7 +22,7 @@ const evaluaciones = [
         Esta en el grupo de WhataApp :D
 `,
         notas: {
-            5: ["Daniel Zaldívar Figueredo","Victor Manuel Maceira Mir","Jesús Hernández Guio", "Julio Alejandro Gámez Calzadilla", "Yadiel Jorge Acosta Ricardo"]
+            5: ["Daniel Zaldívar Figueredo","Victor Manuel Maceira Mir","Jesús Hernández Guio", "Julio Alejandro Gámez Calzadilla", "Yadiel Jorge Acosta Ricardo",]
             4: ["Randy Ernesto Suárez Rodríguez","",""]
         }
     },
