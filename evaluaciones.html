@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Evaluaciones – Informática 101</title>
+
+<style>
+/* =======================
+   ESTILOS GENERALES
+======================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f2f4f8;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =======================
+   HEADER
+======================= */
+header {
+    background: linear-gradient(135deg, #1e1e2f, #34345a);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    animation: fadeInDown 1s ease;
+}
+
+header h1 {
+    font-size: 2.8em;
+}
+
+/* =======================
+   NAV
+======================= */
+nav {
+    background-color: #1e1e2f;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background-color: #1e1e2f;
+    z-index: 1000;
+}
+#pregunta1,
+#pregunta2 {
+    scroll-margin-top: 120px;
+}
+
+@media (max-width: 600px) {
+    #pregunta1,
+    #pregunta2 {
+        scroll-margin-top: 180px;
+    }
+}
+
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* =======================
+   MAIN
+======================= */
+main {
+    flex: 1;
+    padding: 50px 10%;
+}
+
+/* =======================
+   CARD EVALUACIÓN
+======================= */
+.evaluacion {
+    background: white;
+    border-radius: 14px;
+    padding: 35px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    animation: fadeUp 0.7s ease;
+}
+
+.evaluacion h2 {
+    color: #1e1e2f;
+    margin-bottom: 10px;
+}
+
+.fecha {
+    display: inline-block;
+    background: #1e1e2f;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.95em;
+    margin-bottom: 20px;
+}
+
+/* =======================
+   CONTENIDO
+======================= */
+.evaluacion p,
+.evaluacion li {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.evaluacion ul {
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+.linea {
+    font-family: monospace;
+    letter-spacing: 2px;
+}
+
+.evaluacion:nth-of-type(2) ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+
+/* =======================
+   FOOTER
+======================= */
+footer {
+    background-color: #1e1e2f;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+.tabla-enlazar {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1.1em;
+}
+
+.tabla-enlazar th {
+    text-align: left;
+    padding: 10px;
+    background: #f2f4f8;
+    color: #1e1e2f;
+    font-weight: bold;
+}
+
+.tabla-enlazar td {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+.tabla-enlazar .linea {
+    font-family: monospace;
+    letter-spacing: 2px;
+    text-align: center;
+    min-width: 120px;
+}
+
+
+/* =======================
+   ANIMACIONES
+======================= */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =======================
+   MÓVIL
+======================= */
+@media (max-width: 600px) {
+    body { font-size: 20px; }
+    main { padding: 30px 5%; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Evaluaciones del Curso</h1>
+</header>
+
+<nav>
+    <a href="index.html">Inicio</a>
+    <a href="#pregunta1">Pregunta 1</a>
+    <a href="#pregunta2">Pregunta 2</a>
+</nav>
+
+<main>
+
+<!-- =======================
+   EVALUACIÓN 1
+======================= -->
+<div class="evaluacion">
+    <h2 id="pregunta1" >Evaluacion 1</h2>
+    <span class="fecha">21/5/2026</span>
+
+    <p><b>Esta en grupo de whatsApp</b></p>
+
+<!-- =======================
+   EVALUACIÓN 2
+======================= -->
+<div class="evaluacion">
+    <h2 id="pregunta2">Pronto</h2>
+    <span class="fecha">27/5/2026</span>
+
+    <p><b>Bujajaj</b></p>
+
+   
+</main>
+
+<footer>
+    <p>© 2026 – Curso de Programación Web</p>
+</footer>
+
+</body>
+</html>
