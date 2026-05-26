@@ -40,7 +40,9 @@ const evaluaciones = [
         }
     }
 ];
-
+/*************************
+ * ASIGNAR NOTAS
+ *************************/
 evaluaciones.forEach(ev => {
     alumnos.forEach(al => {
         let nota = null;
